@@ -543,9 +543,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp  25.6
-  #define DEFAULT_bedKi   1.74
-  #define DEFAULT_bedKd 251.6
+  #define DEFAULT_bedKp  96
+  #define DEFAULT_bedKi  12
+  #define DEFAULT_bedKd 500
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1040,7 +1040,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -35, -10, -4 }
+#define NOZZLE_TO_PROBE_OFFSET { -35, -10, -3.85 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1217,15 +1217,15 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 200
-#define Y_BED_SIZE 130
+#define X_BED_SIZE 270
+#define Y_BED_SIZE 155
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE + 52
-#define Y_MAX_POS Y_BED_SIZE + 15
+#define X_MAX_POS X_BED_SIZE + 15
+#define Y_MAX_POS Y_BED_SIZE + 2
 #define Z_MAX_POS 140
 
 /**
@@ -1431,8 +1431,8 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
-  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+  #define GRID_MAX_POINTS_X 4
+  #define GRID_MAX_POINTS_Y 3
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
