@@ -2557,6 +2557,9 @@
 // :[1,2,3,4,5,6,7,8]
 //#define NUM_M106_FANS 1
 
+//remap FAN_PIN to SERVO1_PIN (6) instead of MOSFET
+#define FAN_PIN  SERVO1_PIN
+
 // Increase the FAN PWM frequency. Removes the PWM noise but increases heating in the FET/Arduino
 //#define FAST_PWM_FAN
 
